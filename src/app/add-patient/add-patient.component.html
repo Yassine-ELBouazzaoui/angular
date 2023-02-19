@@ -1,0 +1,139 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Add Patient</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <form [formGroup]="registerform" (ngSubmit)="ajouter()">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Name <span class="text-danger">*</span></label>
+                                <input class="form-control" type="text" formControlName="name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Age <span class="text-danger">*</span></label>
+                                <input class="form-control" type="number" formControlName="age">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Sex</label>
+                                <select class="form-control select" formControlName="sex">
+                                    <option value="0">Male</option>
+                                    <option value="1">female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Cp</label>
+                                <select class="form-control select" formControlName="cp">
+                                    <option value="1">typical angina</option>
+                                    <option value="2">atypical angina</option>
+                                    <option value="3">non-angina</option>
+                                    <option value="4">asymptomatic</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>trestbps <span class="text-danger">*</span></label>
+                                <input class="form-control" type="number" min="94" max="200" formControlName="trestbps">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>chol<span class="text-danger">*</span></label>
+                                <input class="form-control" type="number" min="126" max="564" formControlName="chol">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>restecg</label>
+                                <select class="form-control select" formControlName="restecg">
+                                    <option value="0">normal</option>
+                                    <option value="1">having ST-T wave abnormality</option>
+                                    <option value="2">showing probable</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Fbs</label>
+                                <select class="form-control select" formControlName="fbs">
+                                    <option value="0">yes</option>
+                                    <option value="1">no</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Thalach</label>
+                                <input class="form-control" type="number" min="71" max="202" formControlName="thalach">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>exang</label>
+                                <select class="form-control select" formControlName="exang">
+                                    <option value="1">yes</option>
+                                    <option value="0">no</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>oldpeak</label>
+                                <input class="form-control" type="number" min="0" max="6.2" step="0.1" formControlName="oldpeak">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Slope</label>
+                                <select class="form-control select" formControlName="slope">
+                                    <option value="1">up sloping</option>
+                                    <option value="2">flat</option>
+                                    <option value="3">down sloping</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Ca</label>
+                                <input class="form-control" type="number" min="0" max="3" formControlName="ca">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Thal</label>
+                                <select class="form-control select" formControlName="thal">
+                                    <option value="7">reversible defect</option>
+                                    <option value="6">fixed defect</option>
+                                    <option value="3">normal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Num</label>
+                                <select class="form-control select" formControlName="num">
+                                    <option value="0">absonse of HD</option>
+                                    <option value="1">presence of HD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-t-20 text-center">
+                        <button type="submit" class="btn btn-primary submit-btn">Create Patient</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

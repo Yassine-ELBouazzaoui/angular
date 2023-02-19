@@ -1,0 +1,85 @@
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-4 col-3">
+                <h4 class="page-title">Patients</h4>
+            </div>
+            <div class="col-sm-8 col-9 text-right m-b-20">
+                <a [routerLink]="['/admin/patientAdd']" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Patient</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-border table-striped custom-table datatable mb-0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Sex</th>
+                                <th>Cp</th>
+                                <th>Trestbps</th>
+                                <th>Chol</th>
+                                <th>Restecg</th>
+                                <th>Fbs</th>
+                                <th>Thalach</th>
+                                <th>Exang</th>
+                                <th>Oldpeak</th>
+                                <th>Slope</th>
+                                <th>Ca</th>
+                                <th>Thal</th>
+                                <th>Num</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let patient of patientList">
+                                <td>{{patient.name}}</td>
+                                <td>{{patient.age}}</td>
+                                <td>{{patient.sex == 1 ? 'Male' : 'Female'}}</td>
+                                <td>
+                                    <ng-template [ngIf] = "patient.cp== 1">typical angina</ng-template>
+                                    <ng-template [ngIf] = "patient.cp== 2">atypical angina</ng-template>
+                                    <ng-template [ngIf] = "patient.cp== 3">non-angina</ng-template>
+                                    <ng-template [ngIf] = "patient.cp== 4">asymptomatic</ng-template>
+                                </td>
+                                <td>{{patient.trestbps}}</td>
+                                <td>{{patient.chol}}</td>
+                                <td>
+                                    <ng-template [ngIf] = "patient.restecg== 0">normal</ng-template>
+                                    <ng-template [ngIf] = "patient.restecg== 1">having ST-T wave abnormality</ng-template>
+                                    <ng-template [ngIf] = "patient.restecg== 2">showing probable</ng-template>
+                                </td>
+                                <td>{{patient.fbs == 1 ? 'yes' : 'no'}}</td>
+                                <td>{{patient.thalach}}</td>
+                                <td>{{patient.exang == 1 ? 'yes' : 'no'}}</td>
+                                <td>{{patient.oldpeak}}</td>
+                                <td>
+                                    <ng-template [ngIf] = "patient.slope== 1">up sloping</ng-template>
+                                    <ng-template [ngIf] = "patient.slope== 2">flat</ng-template>
+                                    <ng-template [ngIf] = "patient.slope== 3">down sloping</ng-template>
+                                </td>
+                                <td>{{patient.ca}}</td>
+                                <td>
+                                    <ng-template [ngIf] = "patient.thal== 3">normal</ng-template>
+                                    <ng-template [ngIf] = "patient.thal== 6">fixed defect</ng-template>
+                                    <ng-template [ngIf] = "patient.thal== 7">reversible defect</ng-template>
+                                </td>
+                                <td>{{patient.num == 1 ? 'presence of HD' : 'absonse of HD'}}</td>
+                                <td class="text-right">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" routerLink="/admin/patient/{{patient.id}}" ><i class="fa fa-pencil m-r-5"></i>Show</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>                         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
